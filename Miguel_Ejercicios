@@ -1,0 +1,63 @@
+// Ejercicio 1
+
+function ensure(value) {
+  if(value === undefined) {
+    throw new Error('no arguments');
+  }
+
+  return value;
+}
+**************************************
+// Ejercicio 2
+
+function formatDate(userDate) {
+  // format from M/D/YYYY to YYYYMMDD
+
+    valor = userDate.split("/");
+  
+    day = valor[1];
+    month = valor[0];
+    year = valor[2];
+  
+    if(day.length==1){
+        day = "0" +day;
+    }
+  
+    if(month.length==1){
+        month = "0" + month;
+    } 
+    
+  
+
+ return year + month + day;
+}
+
+console.log(formatDate("12/01/2014"));
+
+***************************************
+//Ejercicio 3
+
+function removeProperty(obj, prop) {
+
+  if (obj.hasOwnProperty(prop)) { 
+    delete obj[prop];
+    return true;
+  }
+
+  return false;
+}
+***************************************
+
+//Ejercicio 4
+
+function registerHandlers() {
+  var as = document.getElementsByTagName('a');
+
+  for (var i = 0; i < as.length; i++) {
+    as[i].setAttribute('data-index', i);
+    as[i].onclick = function () {
+      alert(this.getAttribute('data-index'));
+    }
+  }
+}
+
